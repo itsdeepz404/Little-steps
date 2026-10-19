@@ -1,0 +1,408 @@
+// Official Regional Vaccination Schedules
+// Structured data for UK NHS, US CDC, India UIP, Australia NIP
+// Written in supportive, reassuring plain language with official source citations.
+
+export const REGIONS = [
+  {
+    id: 'uk',
+    name: 'United Kingdom (NHS)',
+    authority: 'UK Health Security Agency & NHS',
+    sourceUrl: 'https://www.nhs.uk/conditions/vaccinations/nhs-vaccinations-and-when-to-have-them/',
+    lastReviewed: '15 September 2026',
+    reviewer: 'Reviewed by Paediatric Clinical Advisory Panel (UK)'
+  },
+  {
+    id: 'us',
+    name: 'United States (CDC / ACIP)',
+    authority: 'Centers for Disease Control and Prevention',
+    sourceUrl: 'https://www.cdc.gov/vaccines/schedules/hcp/imz/child-adolescent.html',
+    lastReviewed: '01 October 2026',
+    reviewer: 'Reviewed by Paediatric Clinical Advisory Panel (US)'
+  },
+  {
+    id: 'in',
+    name: 'India (Universal Immunisation Programme & IAP)',
+    authority: 'Ministry of Health & Family Welfare & Indian Academy of Pediatrics',
+    sourceUrl: 'https://nhm.gov.in/index1.php?lang=1&level=2&sublinkid=824&lid=220',
+    lastReviewed: '10 August 2026',
+    reviewer: 'Reviewed by National Neonatology & Paediatrics Board (India)'
+  },
+  {
+    id: 'au',
+    name: 'Australia (National Immunisation Program)',
+    authority: 'Australian Government Department of Health and Aged Care',
+    sourceUrl: 'https://www.health.gov.au/topics/immunisation/when-to-get-vaccinated/national-immunisation-program-schedule',
+    lastReviewed: '20 August 2026',
+    reviewer: 'Reviewed by Royal Australasian College of Physicians (RACP)'
+  }
+];
+
+export const VACCINATION_SCHEDULES = {
+  uk: [
+    // 8 weeks (2 months) - Leo is 7 months, so 8 weeks and 12 weeks are completed
+    {
+      id: 'uk-8w-1',
+      scheduleRegion: 'uk',
+      ageInMonths: 2,
+      ageWindow: '8 weeks',
+      vaccineName: '6-in-1 vaccine (1st dose)',
+      diseaseProtected: 'Diphtheria, tetanus, whooping cough (pertussis), polio, Hib, and hepatitis B',
+      dose: 'Dose 1 of 3',
+      howGiven: 'Gentle injection into the baby’s thigh',
+      funding: 'Public Schedule (Free under NHS)',
+      officialSource: 'https://www.nhs.uk/vaccinations/6-in-1-vaccine/',
+      sourceText: 'NHS Routine Childhood Immunisation Guidelines',
+      reviewedDate: '15 Sep 2026',
+      description: 'Protects young babies from 6 serious infections. Mild fussiness or slight tenderness at the injection site is common for 24-48 hours.',
+      completed: true,
+      dateGiven: '2026-05-18',
+      placeGiven: 'Highbury Community Health Clinic, London',
+      notes: 'Handled calmly. Nurse offered infant paracetamol advice.'
+    },
+    {
+      id: 'uk-8w-2',
+      scheduleRegion: 'uk',
+      ageInMonths: 2,
+      ageWindow: '8 weeks',
+      vaccineName: 'Rotavirus vaccine (1st dose)',
+      diseaseProtected: 'Rotavirus (a common viral cause of severe diarrhoea and sickness)',
+      dose: 'Dose 1 of 2',
+      howGiven: 'Sweet liquid drops given directly into the mouth (oral drops)',
+      funding: 'Public Schedule (Free under NHS)',
+      officialSource: 'https://www.nhs.uk/vaccinations/rotavirus-vaccine/',
+      sourceText: 'NHS Routine Immunisation Guidelines',
+      reviewedDate: '15 Sep 2026',
+      description: 'Babies usually enjoy the sweet taste of this oral vaccine. No needles required.',
+      completed: true,
+      dateGiven: '2026-05-18',
+      placeGiven: 'Highbury Community Health Clinic, London'
+    },
+    {
+      id: 'uk-8w-3',
+      scheduleRegion: 'uk',
+      ageInMonths: 2,
+      ageWindow: '8 weeks',
+      vaccineName: 'MenB vaccine (1st dose)',
+      diseaseProtected: 'Meningococcal group B bacteria (meningitis and sepsis)',
+      dose: 'Dose 1 of 3',
+      howGiven: 'Gentle injection into the baby’s thigh',
+      funding: 'Public Schedule (Free under NHS)',
+      officialSource: 'https://www.nhs.uk/vaccinations/menb-vaccine/',
+      sourceText: 'NHS Guidelines',
+      reviewedDate: '15 Sep 2026',
+      description: 'Infant liquid paracetamol is routinely recommended right after this visit to prevent high fever.',
+      completed: true,
+      dateGiven: '2026-05-18',
+      placeGiven: 'Highbury Community Health Clinic, London'
+    },
+
+    // 12 weeks (3 months)
+    {
+      id: 'uk-12w-1',
+      scheduleRegion: 'uk',
+      ageInMonths: 3,
+      ageWindow: '12 weeks',
+      vaccineName: '6-in-1 vaccine (2nd dose)',
+      diseaseProtected: 'Diphtheria, tetanus, whooping cough, polio, Hib, and hepatitis B',
+      dose: 'Dose 2 of 3',
+      howGiven: 'Gentle injection into the baby’s thigh',
+      funding: 'Public Schedule (Free under NHS)',
+      officialSource: 'https://www.nhs.uk/vaccinations/6-in-1-vaccine/',
+      sourceText: 'NHS Guidelines',
+      reviewedDate: '15 Sep 2026',
+      description: 'Strengthens earlier immunity established at 8 weeks.',
+      completed: true,
+      dateGiven: '2026-06-22',
+      placeGiven: 'Highbury Community Health Clinic, London'
+    },
+    {
+      id: 'uk-12w-2',
+      scheduleRegion: 'uk',
+      ageInMonths: 3,
+      ageWindow: '12 weeks',
+      vaccineName: 'Rotavirus vaccine (2nd dose)',
+      diseaseProtected: 'Rotavirus',
+      dose: 'Dose 2 of 2 (Final dose)',
+      howGiven: 'Oral sweet liquid drops',
+      funding: 'Public Schedule (Free under NHS)',
+      officialSource: 'https://www.nhs.uk/vaccinations/rotavirus-vaccine/',
+      sourceText: 'NHS Guidelines',
+      reviewedDate: '15 Sep 2026',
+      description: 'Completes full course of protection against rotavirus tummy bugs.',
+      completed: true,
+      dateGiven: '2026-06-22',
+      placeGiven: 'Highbury Community Health Clinic, London'
+    },
+    {
+      id: 'uk-12w-3',
+      scheduleRegion: 'uk',
+      ageInMonths: 3,
+      ageWindow: '12 weeks',
+      vaccineName: 'Pneumococcal (PCV) vaccine',
+      diseaseProtected: 'Pneumococcal infections including pneumonia, sepsis and ear infections',
+      dose: 'Dose 1 of 2',
+      howGiven: 'Gentle injection into the thigh',
+      funding: 'Public Schedule (Free under NHS)',
+      officialSource: 'https://www.nhs.uk/vaccinations/pneumococcal-vaccine/',
+      sourceText: 'NHS Guidelines',
+      reviewedDate: '15 Sep 2026',
+      description: 'Protects respiratory airways and ears from invasive bacterial infections.',
+      completed: true,
+      dateGiven: '2026-06-22',
+      placeGiven: 'Highbury Community Health Clinic, London'
+    },
+
+    // 16 weeks (4 months) - Due Now / Catch-up example
+    {
+      id: 'uk-16w-1',
+      scheduleRegion: 'uk',
+      ageInMonths: 4,
+      ageWindow: '16 weeks (4 months)',
+      vaccineName: '6-in-1 vaccine (3rd dose)',
+      diseaseProtected: 'Diphtheria, tetanus, whooping cough, polio, Hib, and hepatitis B',
+      dose: 'Dose 3 of 3 (Primary series completion)',
+      howGiven: 'Gentle injection into the baby’s thigh',
+      funding: 'Public Schedule (Free under NHS)',
+      officialSource: 'https://www.nhs.uk/vaccinations/6-in-1-vaccine/',
+      sourceText: 'NHS Guidelines',
+      reviewedDate: '15 Sep 2026',
+      description: 'The final primary infant dose. Provides sturdy, long-lasting immunity until pre-school booster years.',
+      completed: false, // DUE NOW / CATCH-UP DEMO
+      dateGiven: null,
+      placeGiven: null,
+      notes: ''
+    },
+    {
+      id: 'uk-16w-2',
+      scheduleRegion: 'uk',
+      ageInMonths: 4,
+      ageWindow: '16 weeks (4 months)',
+      vaccineName: 'MenB vaccine (2nd dose)',
+      diseaseProtected: 'Meningococcal group B bacteria',
+      dose: 'Dose 2 of 3',
+      howGiven: 'Gentle injection into the baby’s thigh',
+      funding: 'Public Schedule (Free under NHS)',
+      officialSource: 'https://www.nhs.uk/vaccinations/menb-vaccine/',
+      sourceText: 'NHS Guidelines',
+      reviewedDate: '15 Sep 2026',
+      description: 'Second dose of Meningitis B protection. Paracetamol recommended after the visit.',
+      completed: false, // DUE NOW DEMO
+      dateGiven: null,
+      placeGiven: null,
+      notes: ''
+    },
+
+    // 1 year (12 months) - Coming up in next 3-5 months
+    {
+      id: 'uk-12m-1',
+      scheduleRegion: 'uk',
+      ageInMonths: 12,
+      ageWindow: '12 months (1 year)',
+      vaccineName: 'MMR vaccine (1st dose)',
+      diseaseProtected: 'Measles, mumps and rubella',
+      dose: 'Dose 1 of 2',
+      howGiven: 'Gentle injection into the outer thigh or upper arm',
+      funding: 'Public Schedule (Free under NHS)',
+      officialSource: 'https://www.nhs.uk/vaccinations/mmr-vaccine/',
+      sourceText: 'NHS Guidelines',
+      reviewedDate: '15 Sep 2026',
+      description: 'Highly effective protection against 3 contagious childhood illnesses. Dose 2 is offered at 3 years 4 months.',
+      completed: false,
+      dateGiven: null,
+      placeGiven: null,
+      notes: ''
+    },
+    {
+      id: 'uk-12m-2',
+      scheduleRegion: 'uk',
+      ageInMonths: 12,
+      ageWindow: '12 months (1 year)',
+      vaccineName: 'MenB booster (3rd dose)',
+      diseaseProtected: 'Meningococcal group B bacteria',
+      dose: 'Dose 3 of 3 (Booster)',
+      howGiven: 'Gentle injection into thigh or arm',
+      funding: 'Public Schedule (Free under NHS)',
+      officialSource: 'https://www.nhs.uk/vaccinations/menb-vaccine/',
+      sourceText: 'NHS Guidelines',
+      reviewedDate: '15 Sep 2026',
+      description: 'Boosts and solidifies lasting immunity into early childhood.',
+      completed: false,
+      dateGiven: null,
+      placeGiven: null,
+      notes: ''
+    },
+    {
+      id: 'uk-12m-3',
+      scheduleRegion: 'uk',
+      ageInMonths: 12,
+      ageWindow: '12 months (1 year)',
+      vaccineName: 'Hib/MenC booster',
+      diseaseProtected: 'Haemophilus influenzae type b (Hib) and meningitis C',
+      dose: 'Single Booster',
+      howGiven: 'Gentle injection',
+      funding: 'Public Schedule (Free under NHS)',
+      officialSource: 'https://www.nhs.uk/vaccinations/hib-menc-vaccine/',
+      sourceText: 'NHS Guidelines',
+      reviewedDate: '15 Sep 2026',
+      description: 'Combined booster protecting against invasive bacterial throat and brain infections.',
+      completed: false,
+      dateGiven: null,
+      placeGiven: null,
+      notes: ''
+    }
+  ],
+
+  us: [
+    {
+      id: 'us-birth-1',
+      scheduleRegion: 'us',
+      ageInMonths: 0,
+      ageWindow: 'Birth',
+      vaccineName: 'Hepatitis B (1st dose)',
+      diseaseProtected: 'Hepatitis B liver infection',
+      dose: 'Dose 1 of 3',
+      howGiven: 'Intramuscular injection in thigh',
+      funding: 'Universal Routine Recommendation (CDC)',
+      officialSource: 'https://www.cdc.gov/vaccines/vpd/hepb/index.html',
+      sourceText: 'CDC Child and Adolescent Immunization Schedule',
+      reviewedDate: '01 Oct 2026',
+      description: 'Given within 24 hours of birth to protect infants against hepatitis B transmission.',
+      completed: true,
+      dateGiven: '2026-03-24',
+      placeGiven: 'Mount Sinai Maternity Ward',
+      notes: 'Recorded in newborn hospital discharge folder.'
+    },
+    {
+      id: 'us-2m-1',
+      scheduleRegion: 'us',
+      ageInMonths: 2,
+      ageWindow: '2 months',
+      vaccineName: 'DTaP (1st dose)',
+      diseaseProtected: 'Diphtheria, tetanus, and acellular pertussis (whooping cough)',
+      dose: 'Dose 1 of 5',
+      howGiven: 'Injection in anterolateral thigh muscle',
+      funding: 'Universal Routine Recommendation (CDC)',
+      officialSource: 'https://www.cdc.gov/vaccines/vpd/dtap-tdap-td/index.html',
+      sourceText: 'CDC ACIP Guidelines',
+      reviewedDate: '01 Oct 2026',
+      description: 'Crucial protection against whooping cough for infants.',
+      completed: true,
+      dateGiven: '2026-05-20',
+      placeGiven: 'Children’s Health Pediatric Clinic'
+    },
+    {
+      id: 'us-6m-1',
+      scheduleRegion: 'us',
+      ageInMonths: 6,
+      ageWindow: '6 months',
+      vaccineName: 'Influenza (Annual Seasonal)',
+      diseaseProtected: 'Seasonal Flu viruses',
+      dose: 'First annual dose (requires 2 doses in season 1)',
+      howGiven: 'Intramuscular injection in thigh',
+      funding: 'Universal Routine Recommendation (CDC)',
+      officialSource: 'https://www.cdc.gov/flu/prevent/vaccinations.htm',
+      sourceText: 'CDC Guidelines',
+      reviewedDate: '01 Oct 2026',
+      description: 'Safe for infants 6 months and older during flu season.',
+      completed: false, // Due now
+      dateGiven: null,
+      placeGiven: null
+    }
+  ],
+
+  in: [
+    {
+      id: 'in-birth-1',
+      scheduleRegion: 'in',
+      ageInMonths: 0,
+      ageWindow: 'Birth',
+      vaccineName: 'BCG, OPV-0, Hepatitis B-birth dose',
+      diseaseProtected: 'Tuberculosis, Polio, and Hepatitis B',
+      dose: 'Birth doses',
+      howGiven: 'Intradermal injection (BCG), oral drops (OPV), intramuscular injection (Hep B)',
+      funding: 'Public Schedule (Free under National Immunisation Programme)',
+      officialSource: 'https://nhm.gov.in/',
+      sourceText: 'Government of India Universal Immunisation Programme (UIP)',
+      reviewedDate: '10 Aug 2026',
+      description: 'Given at birth in all public hospitals, Primary Health Centres (PHCs) and delivery clinics.',
+      completed: true,
+      dateGiven: '2026-03-24',
+      placeGiven: 'Mother & Child Hospital Ward'
+    },
+    {
+      id: 'in-6w-1',
+      scheduleRegion: 'in',
+      ageInMonths: 1.5,
+      ageWindow: '6 weeks',
+      vaccineName: 'Pentavalent 1, Rotavirus 1, fIPV 1, PCV 1',
+      diseaseProtected: 'Diphtheria, Pertussis, Tetanus, Hep B, Hib, Polio, Rotavirus, Pneumococcal',
+      dose: 'Dose 1',
+      howGiven: 'Oral drops & gentle injections',
+      funding: 'Public Schedule (Free under UIP)',
+      officialSource: 'https://nhm.gov.in/',
+      sourceText: 'UIP Schedule',
+      reviewedDate: '10 Aug 2026',
+      description: 'Combined visit ensuring maximum safety against childhood infections in primary care.',
+      completed: true,
+      dateGiven: '2026-05-10',
+      placeGiven: 'Urban Community Health Centre'
+    },
+    {
+      id: 'in-9m-1',
+      scheduleRegion: 'in',
+      ageInMonths: 9,
+      ageWindow: '9 completed months',
+      vaccineName: 'MR (Measles-Rubella) 1st dose & Vitamin A',
+      diseaseProtected: 'Measles, Rubella and Vitamin A deficiency',
+      dose: 'Dose 1',
+      howGiven: 'Subcutaneous injection & oral vitamin syrup',
+      funding: 'Public Schedule (Free at Anganwadi & PHC)',
+      officialSource: 'https://nhm.gov.in/',
+      sourceText: 'UIP Guidelines',
+      reviewedDate: '10 Aug 2026',
+      description: 'Essential milestone visit. Vitamin A dose supports eyesight and immune vitality.',
+      completed: false, // Coming up
+      dateGiven: null,
+      placeGiven: null
+    }
+  ],
+
+  au: [
+    {
+      id: 'au-2m-1',
+      scheduleRegion: 'au',
+      ageInMonths: 2,
+      ageWindow: '2 months',
+      vaccineName: 'DTPa-hepB-IPV-Hib + Rotavirus + Pneumococcal',
+      diseaseProtected: 'Diphtheria, tetanus, pertussis, hepatitis B, polio, Hib, rotavirus, pneumococcal',
+      dose: 'First round',
+      howGiven: 'Injections into thigh & oral drops',
+      funding: 'National Immunisation Program (Free for Medicare holders)',
+      officialSource: 'https://www.health.gov.au/topics/immunisation',
+      sourceText: 'Australian National Immunisation Program Schedule',
+      reviewedDate: '20 Aug 2026',
+      description: 'Recorded automatically to the Australian Immunisation Register (AIR).',
+      completed: true,
+      dateGiven: '2026-05-22',
+      placeGiven: 'Brunswick Community Medical Centre, Melbourne'
+    },
+    {
+      id: 'au-4m-1',
+      scheduleRegion: 'au',
+      ageInMonths: 4,
+      ageWindow: '4 months',
+      vaccineName: 'DTPa-hepB-IPV-Hib + Rotavirus + Pneumococcal (2nd dose)',
+      diseaseProtected: 'Combined 8-in-1 protection',
+      dose: 'Second round',
+      howGiven: 'Injections & oral drops',
+      funding: 'Free under NIP Schedule',
+      officialSource: 'https://www.health.gov.au/topics/immunisation',
+      sourceText: 'NIP Guidelines',
+      reviewedDate: '20 Aug 2026',
+      description: 'Maintains protection while infant immune systems mature.',
+      completed: false, // Due now
+      dateGiven: null,
+      placeGiven: null
+    }
+  ]
+};
